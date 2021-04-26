@@ -15,8 +15,7 @@ public class HospitalManagmentApplication {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Login lgn = new Login();
-        lgn.setVisible(true);
+        // TODO code application logic here
     }
     
 }
