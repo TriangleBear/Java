@@ -12,6 +12,7 @@ public class FactorNPrime extends javax.swing.JFrame {
      */
     public FactorNPrime() {
         initComponents();
+        jButton1.setEnabled(false);
     }
 
     /**
@@ -43,6 +44,12 @@ public class FactorNPrime extends javax.swing.JFrame {
         jLabel2.setText("Factors:");
 
         jLabel3.setText("Prime?");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("N/A");
 
@@ -131,14 +138,10 @@ public class FactorNPrime extends javax.swing.JFrame {
         //Inspect Button
         String tfValue = jTextField1.getText();
         int cv=Integer.parseInt(tfValue);
-        if(Integer.valueOf(tfValue)>0){
             for(int i=1;i<=Math.sqrt(cv);i++){
                 if(cv%i==0){
                     jLabel6.setText(i+" "+cv/i+" ");
-                }
             }
-        }else{
-            jLabel6.setText("Invalid");
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -165,7 +168,18 @@ public class FactorNPrime extends javax.swing.JFrame {
         jTextField1.setText("");
         jLabel5.setText("N/A");//Prime
         jLabel6.setText("N/A");//Factor
+        jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        //Disable and enable the inspect button
+        String tfValue = jTextField1.getText();
+        if(Integer.valueOf(tfValue)>0){
+            jButton1.setEnabled(true);
+        }else{
+            jButton1.setEnabled(false);
+        }
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     /**
@@ -200,6 +214,7 @@ public class FactorNPrime extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FactorNPrime().setVisible(true);
+                new FactorNPrime().setEnabled(true);
             }
         });
     }
