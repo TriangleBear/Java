@@ -12,7 +12,7 @@ public class FactorNPrime extends javax.swing.JFrame {
      */
     public FactorNPrime() {
         initComponents();
-        jButton1.setEnabled(false);
+        inspectButton.setEnabled(false);
     }
 
     /**
@@ -29,7 +29,7 @@ public class FactorNPrime extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        inspectButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -53,10 +53,10 @@ public class FactorNPrime extends javax.swing.JFrame {
 
         jLabel5.setText("N/A");
 
-        jButton1.setText("Inspect");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        inspectButton.setText("Inspect");
+        inspectButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                inspectButtonMouseClicked(evt);
             }
         });
 
@@ -102,7 +102,7 @@ public class FactorNPrime extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(inspectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,7 +115,7 @@ public class FactorNPrime extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1)
+                    .addComponent(inspectButton)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -134,7 +134,7 @@ public class FactorNPrime extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
    
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void inspectButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inspectButtonMouseClicked
         //Inspect Button
         String tfValue = jTextField1.getText();
         int cv=Integer.parseInt(tfValue);
@@ -143,7 +143,7 @@ public class FactorNPrime extends javax.swing.JFrame {
                     jLabel6.setText(i+" "+cv/i+" ");
             }
         }
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_inspectButtonMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         //Prime Button
@@ -168,16 +168,17 @@ public class FactorNPrime extends javax.swing.JFrame {
         jTextField1.setText("");
         jLabel5.setText("N/A");//Prime
         jLabel6.setText("N/A");//Factor
-        jButton1.setEnabled(false);
+        inspectButton.setEnabled(false);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         //Disable and enable the inspect button
+        //user needs to press enter after inputting a number to enable the button
         String tfValue = jTextField1.getText();
         if(Integer.valueOf(tfValue)>0){
-            jButton1.setEnabled(true);
+            inspectButton.setEnabled(true);
         }else{
-            jButton1.setEnabled(false);
+            inspectButton.setEnabled(false);
         }
     }//GEN-LAST:event_jTextField1ActionPerformed
 
@@ -220,7 +221,7 @@ public class FactorNPrime extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
+    public javax.swing.JButton inspectButton;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
