@@ -24,6 +24,7 @@ public class FactorNPrime extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -32,7 +33,14 @@ public class FactorNPrime extends javax.swing.JFrame {
         inspectButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
         checkButton = new javax.swing.JButton();
-        factorsLable = new javax.swing.JLabel();
+        factorsLableFSNUM = new javax.swing.JLabel();
+        factorsRadio2 = new javax.swing.JRadioButton();
+        factorsRadio3 = new javax.swing.JRadioButton();
+        factorsRadio4 = new javax.swing.JRadioButton();
+        factorsRadio6 = new javax.swing.JRadioButton();
+        factorsLabelLSNUM = new javax.swing.JLabel();
+
+        jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Number Properties");
@@ -74,7 +82,17 @@ public class FactorNPrime extends javax.swing.JFrame {
             }
         });
 
-        factorsLable.setText("N/A");
+        factorsLableFSNUM.setText("N/A");
+
+        factorsRadio2.setText("N/A");
+
+        factorsRadio3.setText("N/A");
+
+        factorsRadio4.setText("N/A");
+
+        factorsRadio6.setText("N/A");
+
+        factorsLabelLSNUM.setText("N/A");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,13 +113,23 @@ public class FactorNPrime extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(primeYN)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(factorsLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(factorsLableFSNUM, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(factorsRadio2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(factorsRadio3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(factorsRadio4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(factorsRadio6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(factorsLabelLSNUM)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                                 .addComponent(inspectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
@@ -116,7 +144,12 @@ public class FactorNPrime extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(inspectButton)
-                    .addComponent(factorsLable))
+                    .addComponent(factorsLableFSNUM)
+                    .addComponent(factorsRadio2)
+                    .addComponent(factorsRadio3)
+                    .addComponent(factorsRadio4)
+                    .addComponent(factorsRadio6)
+                    .addComponent(factorsLabelLSNUM))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -135,13 +168,32 @@ public class FactorNPrime extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     private void inspectButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inspectButtonMouseClicked
-        //Inspect Button
-        String tfValue = numTextField.getText();
-        int cv=Integer.parseInt(tfValue);
-            for(int i=1;i<=Math.sqrt(cv);i++){
-                if(cv%i==0){
-                    factorsLable.setText(i+" "+cv/i+" ");
-            }
+        String lV = numTextField.getText();
+        int rd = Integer.parseInt(lV);
+        if((factorsRadio2.isSelected())&&(rd%2==0)){
+            factorsRadio2.setSelected(false);
+            factorsRadio2.setText("2 YES");
+        }else if((factorsRadio3.isSelected())&&(rd%3==0)){
+            factorsRadio3.setSelected(false);
+            factorsRadio3.setText("3 YES");
+        }else if((factorsRadio4.isSelected())&&(rd%4==0)){
+            factorsRadio4.setSelected(false);
+            factorsRadio4.setText("4 YES");
+        }else if((factorsRadio6.isSelected())&&(rd%6==0)){
+            factorsRadio6.setSelected(false);
+            factorsRadio6.setText("6 YES");
+        }else if((factorsRadio2.isSelected())&&(rd%2!=0)){
+            factorsRadio2.setSelected(false);
+            factorsRadio2.setText("2 NO");
+        }else if((factorsRadio3.isSelected())&&(rd%3!=0)){
+            factorsRadio3.setSelected(false);
+            factorsRadio3.setText("3 NO");
+        }else if((factorsRadio4.isSelected())&&(rd%4!=0)){
+            factorsRadio4.setSelected(false);
+            factorsRadio4.setText("4 NO");
+        }else if((factorsRadio6.isSelected())&&(rd%6!=0)){
+            factorsRadio6.setSelected(false);
+            factorsRadio6.setText("6 NO");
         }
     }//GEN-LAST:event_inspectButtonMouseClicked
 
@@ -167,7 +219,16 @@ public class FactorNPrime extends javax.swing.JFrame {
         //clear button
         numTextField.setText("");
         primeYN.setText("N/A");//Prime
-        factorsLable.setText("N/A");//Factor
+        factorsLableFSNUM.setText("N/A");//Factorfs
+        factorsLabelLSNUM.setText("N/A");//Factorls
+        factorsRadio2.setSelected(false);
+        factorsRadio3.setSelected(false);
+        factorsRadio4.setSelected(false);
+        factorsRadio6.setSelected(false);
+        factorsRadio2.setText("N/A");
+        factorsRadio3.setText("N/A");
+        factorsRadio4.setText("N/A");
+        factorsRadio6.setText("N/A");
         inspectButton.setEnabled(false);
     }//GEN-LAST:event_clearButtonMouseClicked
 
@@ -179,6 +240,18 @@ public class FactorNPrime extends javax.swing.JFrame {
             inspectButton.setEnabled(true);
         }else{
             inspectButton.setEnabled(false);
+        }
+        //Inspect Button
+        int cv=Integer.parseInt(tfValue);
+            for(int i=1;i<=Math.sqrt(cv);i++){
+                if(cv%i==0){
+                    factorsLableFSNUM.setText("1");
+                    factorsRadio2.setText(Integer.toString(2));
+                    factorsRadio3.setText(Integer.toString(3));
+                    factorsRadio4.setText(Integer.toString(4));
+                    factorsRadio6.setText(Integer.toString(6));
+                    factorsLabelLSNUM.setText(Integer.toString(cv));
+            }
         }
     }//GEN-LAST:event_numTextFieldActionPerformed
 
@@ -223,11 +296,17 @@ public class FactorNPrime extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton checkButton;
     private javax.swing.JButton clearButton;
-    private javax.swing.JLabel factorsLable;
+    private javax.swing.JLabel factorsLabelLSNUM;
+    private javax.swing.JLabel factorsLableFSNUM;
+    private javax.swing.JRadioButton factorsRadio2;
+    private javax.swing.JRadioButton factorsRadio3;
+    private javax.swing.JRadioButton factorsRadio4;
+    private javax.swing.JRadioButton factorsRadio6;
     public javax.swing.JButton inspectButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JTextField numTextField;
     private javax.swing.JLabel primeYN;
     // End of variables declaration//GEN-END:variables
