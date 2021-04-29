@@ -12,11 +12,7 @@ package userPass;
 public class runner {
     public static void main(String[] args) {
         UsernamePasswords up = new UsernamePasswords();
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new adminLogin().setVisible(true);
-                adminLogin lp = new adminLogin(up.getLoginInfo());
-            }
-        });
+        adminLogin lp = new adminLogin(up.getLoginInfo());
+        new adminLogin().setVisible(true);
     }
 }
