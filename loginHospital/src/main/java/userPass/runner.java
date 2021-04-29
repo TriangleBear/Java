@@ -13,6 +13,6 @@ public class runner {
     public static void main(String[] args) {
         UsernamePasswords up = new UsernamePasswords();
         adminLogin lp = new adminLogin(up.getLoginInfo());
-        new adminLogin().setVisible(true);
+        lp.setVisible(true);
     }
 }
