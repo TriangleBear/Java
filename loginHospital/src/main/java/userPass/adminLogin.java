@@ -40,6 +40,7 @@ public class adminLogin extends javax.swing.JFrame{
         messageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(null);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 102, 255));
