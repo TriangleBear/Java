@@ -14,7 +14,8 @@ import java.util.HashMap;
  */
 public class adminLogin extends javax.swing.JFrame{
     HashMap<String,String> userPass1 = new HashMap<>();
-    adminLogin(HashMap<String,String> userPass){    
+    public adminLogin(HashMap<String,String> userPass){    
+        initComponents();
         userPass1 = userPass;
     }
     public adminLogin() {
@@ -39,6 +40,7 @@ public class adminLogin extends javax.swing.JFrame{
         messageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -55,6 +57,11 @@ public class adminLogin extends javax.swing.JFrame{
         userPassword.setText("Password");
 
         userUsername.setText("Username");
+        userUsername.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userUsernameMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,6 +111,7 @@ public class adminLogin extends javax.swing.JFrame{
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
@@ -128,6 +136,11 @@ public class adminLogin extends javax.swing.JFrame{
             }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void userUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userUsernameMouseClicked
+        userUsername.setText("");
+        userPassword.setText("");
+    }//GEN-LAST:event_userUsernameMouseClicked
 
     /**
      * @param args the command line arguments
@@ -157,11 +170,7 @@ public class adminLogin extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new adminLogin().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
