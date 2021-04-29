@@ -15,6 +15,7 @@ public class runner {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new adminLogin().setVisible(true);
+                adminLogin lp = new adminLogin(up.getLoginInfo());
             }
         });
     }
