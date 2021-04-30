@@ -38,6 +38,7 @@ public class adminLogin extends javax.swing.JFrame{
         userPassword = new javax.swing.JPasswordField();
         userUsername = new javax.swing.JTextField();
         messageLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
@@ -64,6 +65,13 @@ public class adminLogin extends javax.swing.JFrame{
             }
         });
 
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -81,7 +89,10 @@ public class adminLogin extends javax.swing.JFrame{
                             .addComponent(messageLabel)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(userPassword)
-                                .addComponent(userUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)))))
+                                .addComponent(userUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(147, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,7 +108,9 @@ public class adminLogin extends javax.swing.JFrame{
                 .addComponent(messageLabel)
                 .addGap(18, 18, 18)
                 .addComponent(loginButton)
-                .addGap(55, 55, 55))
+                .addGap(21, 21, 21)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +156,12 @@ public class adminLogin extends javax.swing.JFrame{
         userPassword.setText("");
     }//GEN-LAST:event_userUsernameMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        loginSelect lS = new loginSelect();
+        lS.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,6 +194,7 @@ public class adminLogin extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
