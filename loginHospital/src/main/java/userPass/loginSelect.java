@@ -10,7 +10,6 @@ package userPass;
  * @author ACER
  */
 public class loginSelect extends javax.swing.JFrame {
-    private static loginSelect f = null;
     /**
      * Creates new form loginSelect
      */
@@ -88,9 +87,12 @@ public class loginSelect extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
-        
+        this.setVisible(false);
+        UsernamePasswordsDOC up = new UsernamePasswordsDOC();
+        doctorLogin lp = new doctorLogin(up.getLoginInfoDOC());
+        lp.setVisible(true);
     }//GEN-LAST:event_doctorButtonActionPerformed
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
@@ -141,18 +143,4 @@ public class loginSelect extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton receptionistButton;
     // End of variables declaration//GEN-END:variables
-
-    private class getInstance {
-
-        public static synchronized loginSelect getInstance(){
-        try{
-            if(f==null){
-                f = (loginSelect) Class.forName("loginSelect").newInstance();
-            }
-        }catch(ClassNotFoundException | IllegalAccessException | InstantiationException e){
-            System.out.println(e.toString());
-        }
-        return f;
-    }
-    }
 }
