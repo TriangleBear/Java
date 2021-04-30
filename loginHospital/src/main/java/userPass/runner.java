@@ -11,8 +11,7 @@ package userPass;
  */
 public class runner {
     public static void main(String[] args) {
-        UsernamePasswords up = new UsernamePasswords();
-        adminLogin lp = new adminLogin(up.getLoginInfo());
-        lp.setVisible(true);
+        loginSelect lS = new loginSelect();
+        lS.setVisible(true);
     }
 }
