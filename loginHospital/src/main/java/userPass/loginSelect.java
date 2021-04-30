@@ -41,6 +41,11 @@ public class loginSelect extends javax.swing.JFrame {
         });
 
         receptionistButton.setText("Receptionist");
+        receptionistButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                receptionistButtonActionPerformed(evt);
+            }
+        });
 
         adminButton.setText("Admin");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +106,13 @@ public class loginSelect extends javax.swing.JFrame {
         adminLogin lp = new adminLogin(up.getLoginInfo());
         lp.setVisible(true);
     }//GEN-LAST:event_adminButtonActionPerformed
+
+    private void receptionistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionistButtonActionPerformed
+        this.setVisible(false);
+        UsernamePasswordRECEP up = new UsernamePasswordRECEP();
+        adminLogin lp = new adminLogin(up.getLoginInfoRecep());
+        lp.setVisible(true);
+    }//GEN-LAST:event_receptionistButtonActionPerformed
 
     /**
      * @param args the command line arguments
