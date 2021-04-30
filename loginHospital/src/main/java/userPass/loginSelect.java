@@ -110,7 +110,7 @@ public class loginSelect extends javax.swing.JFrame {
     private void receptionistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionistButtonActionPerformed
         this.setVisible(false);
         UsernamePasswordRECEP up = new UsernamePasswordRECEP();
-        adminLogin lp = new adminLogin(up.getLoginInfoRecep());
+        recepLogin lp = new recepLogin(up.getLoginInfoRecep());
         lp.setVisible(true);
     }//GEN-LAST:event_receptionistButtonActionPerformed
 
