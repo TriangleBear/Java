@@ -7,7 +7,7 @@ package userPass;
 
 /**
  *
- * @author ACER
+ * @author Kurt Jayson Zacarias
  */
 public class loginSelect extends javax.swing.JFrame {
     /**

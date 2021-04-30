@@ -7,7 +7,7 @@ package userPass;
 
 /**
  *
- * @author ACER 
+ * @author Kurt Jayson Zacarias
  */
 public class runner {
     public static void main(String[] args) {

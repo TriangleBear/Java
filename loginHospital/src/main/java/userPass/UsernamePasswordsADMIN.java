@@ -7,7 +7,7 @@ package userPass;
 
 /**
  *
- * @author ACER
+ * @author Kurt Jayson Zacarias
  */
 import java.util.*;
 import java.io.*;

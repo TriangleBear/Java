@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author ACER
+ * @author Kurt Jayson Zacarias
  */
 public class doctorLogin extends javax.swing.JFrame {
     HashMap<String,String> userPass1 = new HashMap<>();

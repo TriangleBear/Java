@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author ACER
+ * @author Kurt Jayson Zacarias
  */
 public class UsernamePasswordRECEP {
     final static String filePath = "D:\\Programming\\github\\Java\\loginHospital\\src\\main\\java\\userPass\\usernamePassRecep.txt";

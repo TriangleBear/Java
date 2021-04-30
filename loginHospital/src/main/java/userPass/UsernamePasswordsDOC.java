@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 /**
  *
- * @author ACER
+ * @author Kurt Jayson Zacarias
  */
 public class UsernamePasswordsDOC {
     final static String filePath = "D:\\Programming\\github\\Java\\loginHospital\\src\\main\\java\\userPass\\usernamePassDoc.txt";
