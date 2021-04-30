@@ -168,7 +168,7 @@ public class adminLogin extends javax.swing.JFrame{
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void userUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userUsernameActionPerformed
-        userPassword.setText("");
+        
     }//GEN-LAST:event_userUsernameActionPerformed
 
     /**
