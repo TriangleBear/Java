@@ -12,11 +12,11 @@ package userPass;
 import java.util.*;
 import java.io.*;
 
-public class UsernamePasswords {
-    final static String filePath = "D:\\Programming\\github\\Java\\loginHospital\\src\\main\\java\\userPass\\usernamePass.txt";
+public class UsernamePasswordsADMIN {
+    final static String filePath = "D:\\Programming\\github\\Java\\loginHospital\\src\\main\\java\\userPass\\usernamePassAdmin.txt";
     HashMap<String, String> loginInfo = new HashMap<>();
 
-    UsernamePasswords(){
+    UsernamePasswordsADMIN(){
         BufferedReader br = null;
 
         try{
