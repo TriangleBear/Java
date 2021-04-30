@@ -57,6 +57,11 @@ public class doctorLogin extends javax.swing.JFrame {
         });
 
         userPassword.setText("Password");
+        userPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userPasswordActionPerformed(evt);
+            }
+        });
 
         userUsername.setText("Username");
         userUsername.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,6 +166,10 @@ public class doctorLogin extends javax.swing.JFrame {
         loginSelect lS = new loginSelect();
         lS.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void userPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userPasswordActionPerformed
+        userPassword.setText("");
+    }//GEN-LAST:event_userPasswordActionPerformed
 
     /**
      * @param args the command line arguments

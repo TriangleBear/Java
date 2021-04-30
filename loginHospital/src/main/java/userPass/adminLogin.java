@@ -64,6 +64,11 @@ public class adminLogin extends javax.swing.JFrame{
                 userUsernameMouseClicked(evt);
             }
         });
+        userUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userUsernameActionPerformed(evt);
+            }
+        });
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +166,10 @@ public class adminLogin extends javax.swing.JFrame{
         loginSelect lS = new loginSelect();
         lS.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void userUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userUsernameActionPerformed
+        userPassword.setText("");
+    }//GEN-LAST:event_userUsernameActionPerformed
 
     /**
      * @param args the command line arguments
