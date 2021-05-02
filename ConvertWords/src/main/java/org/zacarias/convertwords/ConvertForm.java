@@ -136,10 +136,8 @@ public class ConvertForm extends javax.swing.JFrame {
     }//GEN-LAST:event_setButtonActionPerformed
 
     private void prevButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevButtonActionPerformed
-        //String[] splt = repDLCC.split("\\s+");
-        //for(int j=0;j<splt.length;j++){
-         //   splt[j]=splt[j].replaceAll("[^\\w]", "");
-        //}
+        //int x = 1,int y=count;
+        //xofyLabel.setText("");
     }//GEN-LAST:event_prevButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
@@ -156,7 +154,7 @@ public class ConvertForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton nextButton;
     private javax.swing.JButton prevButton;
-    private javax.swing.JTextField sentenceTextField;
+    public javax.swing.JTextField sentenceTextField;
     public javax.swing.JButton setButton;
     private javax.swing.JLabel wordLabel;
     private javax.swing.JLabel xofyLabel;
