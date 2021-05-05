@@ -136,7 +136,7 @@ public class ConvertForm extends javax.swing.JFrame {
         String first = a[0];
         wordLabel.setText("Word: "+first);
         if(charIsVowel(first.charAt(0))){
-            convertedLabel.setText("Convert: "+a[0]+"way");
+            convertedLabel.setText("Convert: "+a[index]+"way");
         }
         
         for(;index<first.length();index++){
@@ -160,7 +160,7 @@ public class ConvertForm extends javax.swing.JFrame {
         }
         String first = a[index];
         if(charIsVowel(first.charAt(0))){
-            convertedLabel.setText("Convert: "+a[0]+"way");
+            convertedLabel.setText("Convert: "+a[index]+"way");
         }
         
         for(;index<first.length();index++){
@@ -183,7 +183,7 @@ public class ConvertForm extends javax.swing.JFrame {
         }
         String first = a[index];
         if(charIsVowel(first.charAt(0))){
-            convertedLabel.setText("Convert: "+a[0]+"way");
+            convertedLabel.setText("Convert: "+a[index]+"way");
         }
         
         for(;index<first.length();index++){
@@ -212,6 +212,7 @@ public class ConvertForm extends javax.swing.JFrame {
     private javax.swing.JLabel wordLabel;
     public javax.swing.JLabel xofyLabel;
     // End of variables declaration//GEN-END:variables
+ 
     public static int count_Words(String str)
     {
        int count = 0;
