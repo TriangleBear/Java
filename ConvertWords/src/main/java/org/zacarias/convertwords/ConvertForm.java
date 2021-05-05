@@ -146,7 +146,6 @@ public class ConvertForm extends javax.swing.JFrame {
         }
         String translation = first.substring(index) + first.substring(0, index);
         convertedLabel.setText("Convert: "+translation+"ay");
-        xofyLabel.setText(index+" of "+count_Words(repDLCC.trim()));
         nextButton.setEnabled(true);
         prevButton.setEnabled(true);
     }//GEN-LAST:event_setButtonActionPerformed
