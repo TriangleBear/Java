@@ -123,7 +123,7 @@ public class ConvertForm extends javax.swing.JFrame {
     public static String toLC;
     public static String repDLCC;
     public static String gS;
-    public static int index=0;
+    public static int index=1;
     private void setButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setButtonActionPerformed
         gS = sentenceTextField.getText();
         toLC = gS.toLowerCase();
@@ -146,6 +146,7 @@ public class ConvertForm extends javax.swing.JFrame {
         }
         String translation = first.substring(index) + first.substring(0, index);
         convertedLabel.setText("Convert: "+translation+"ay");
+        xofyLabel.setText(index+" of "+count_Words(repDLCC.trim()));
         nextButton.setEnabled(true);
         prevButton.setEnabled(true);
     }//GEN-LAST:event_setButtonActionPerformed
