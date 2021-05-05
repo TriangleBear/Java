@@ -10,7 +10,7 @@ package org.zacarias.convertwords;
  * @author ACER
  */
 public class ConvertForm extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ConvertForm
      */
@@ -115,33 +115,105 @@ public class ConvertForm extends javax.swing.JFrame {
                     .addComponent(xofyLabel)))
         );
 
+        xofyLabel.getAccessibleContext().setAccessibleDescription("");
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    public static String toLC;
+    public static String repDLCC;
+    public static String gS;
     private void setButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setButtonActionPerformed
-        String gS = sentenceTextField.getText();
-        String toLC = gS.toLowerCase();
-        String repDLCC = toLC.replaceAll("[^\\p{Alpha} ]","");
-        sentenceTextField.setText(repDLCC);
-        
-        int count=0;
-        char ch[] = new char[repDLCC.length()];
-        for(int i=0;i<repDLCC.length();i++){
-            ch[i]=repDLCC.charAt(i);
-            if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )  
-                    count++;  
+        gS = sentenceTextField.getText();
+        toLC = gS.toLowerCase();
+        repDLCC= toLC.replaceAll("[^\\p{Alpha} ]","");
+        sentenceTextField.setText(repDLCC.trim());
+        //counting Words
+        xofyLabel.setText("1 of "+count_Words(repDLCC.trim()));
+        //first word appears in the (Word)
+        String a[] = repDLCC.split(" ");
+        String first = a[0];
+        wordLabel.setText("Word: "+first);
+        if(charIsVowel(first.charAt(0))){
+            convertedLabel.setText("Convert: "+a[0]+"way");
         }
-        xofyLabel.setText("1 of "+count);
+        int index=0;
+        for(;index<first.length();index++){
+            if(charIsVowel(first.charAt(index))){
+                break;
+            }
+        }
+        String translation = first.substring(index) + first.substring(0, index);
+        convertedLabel.setText("Convert: "+translation+"ay");
     }//GEN-LAST:event_setButtonActionPerformed
 
     private void prevButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevButtonActionPerformed
-        //int x = 1,int y=count;
-        //xofyLabel.setText("");
+        String a[] = repDLCC.split(" ");
+        int n=1;
+        if(n<=count_Words(repDLCC.trim())){
+            xofyLabel.setText(n+" of "+count_Words(repDLCC.trim()));
+        wordLabel.setText("Word: "+a[n+1]);
+        if(charIsVowel(a[n+1].charAt(0))){
+            convertedLabel.setText("Convert: "+a[n+1]+"way");
+        }
+        int index=0;
+        for(;index<a[n+1].length();index++){
+            if(charIsVowel(a[n+1].charAt(index))){
+                break;
+            }
+        }
+        String translation = a[n+1].substring(index) + a[n+1].substring(0, index);
+        convertedLabel.setText("Convert: "+translation+"ay");
+        }else if(n==count_Words(repDLCC.trim())){
+            xofyLabel.setText(a[0]+" of "+count_Words(repDLCC.trim()));
+        wordLabel.setText("Word: "+a[0]);
+        if(charIsVowel(a[0].charAt(0))){
+            convertedLabel.setText("Convert: "+a[0]+"way");
+        }
+        int index=0;
+        for(;index<a[0].length();index++){
+            if(charIsVowel(a[0].charAt(index))){
+                break;
+            }
+        }
+        String translation = a[0].substring(index) + a[0].substring(0, index);
+        convertedLabel.setText("Convert: "+translation+"ay");
+        }
     }//GEN-LAST:event_prevButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        // TODO add your handling code here:
+        String a[] = repDLCC.split(" ");
+        int n=1;
+        int eql = count_Words(repDLCC.trim());
+        if(n>=count_Words(repDLCC.trim())){
+            xofyLabel.setText(n+" of "+count_Words(repDLCC.trim()));
+        wordLabel.setText("Word: "+a[n+1]);
+        if(charIsVowel(a[n-1].charAt(0))){
+            convertedLabel.setText("Convert: "+a[n-1]+"way");
+        }
+        int index=0;
+        for(;index<a[n-1].length();index++){
+            if(charIsVowel(a[n-1].charAt(index))){
+                break;
+            }
+        }
+        String translation = a[n-1].substring(index) + a[n-1].substring(0, index);
+        convertedLabel.setText("Convert: "+translation+"ay");
+        }else if(n==0){
+           xofyLabel.setText(eql+" of "+count_Words(repDLCC.trim()));
+        wordLabel.setText("Word: "+a[n]);
+        if(charIsVowel(a[eql].charAt(0))){
+            convertedLabel.setText("Convert: "+a[eql]+"way");
+        }
+        int index=0;
+        for(;index<a[eql].length();index++){
+            if(charIsVowel(a[eql].charAt(index))){
+                break;
+            }
+        }
+        String translation = a[eql].substring(index) + a[eql].substring(0, index);
+        convertedLabel.setText("Convert: "+translation+"ay"); 
+        }
     }//GEN-LAST:event_nextButtonActionPerformed
     /**
      * @param args the command line arguments
@@ -152,11 +224,39 @@ public class ConvertForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel convertedLabel;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton nextButton;
-    private javax.swing.JButton prevButton;
+    public javax.swing.JButton nextButton;
+    public javax.swing.JButton prevButton;
     public javax.swing.JTextField sentenceTextField;
     public javax.swing.JButton setButton;
     private javax.swing.JLabel wordLabel;
-    private javax.swing.JLabel xofyLabel;
+    public javax.swing.JLabel xofyLabel;
     // End of variables declaration//GEN-END:variables
+    public static int count_Words(String str)
+    {
+       int count = 0;
+        if (!(" ".equals(str.substring(0, 1))) || !(" ".equals(str.substring(str.length() - 1))))
+        {
+            for (int i = 0; i < str.length(); i++)
+            {
+                if (str.charAt(i) == ' ')
+                {
+                    count++;
+                }
+            }
+            count = count + 1; 
+        }
+        return count; 
+    }
+    public static boolean charIsVowel(char c) {
+    char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+    for(char ch : vowels) {
+        if(c == ch) {
+            return true;
+        }
+    }
+
+    return false;
+    }
 }
+
