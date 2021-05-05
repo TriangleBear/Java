@@ -12,5 +12,7 @@ public class startUp {
     public static void main(String[] args) {
         ConvertForm CF = new ConvertForm();
         CF.setVisible(true);
+        CF.nextButton.setEnabled(false);
+        CF.prevButton.setEnabled(false);
     }
 }

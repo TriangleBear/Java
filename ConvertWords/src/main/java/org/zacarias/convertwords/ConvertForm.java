@@ -123,6 +123,7 @@ public class ConvertForm extends javax.swing.JFrame {
     public static String toLC;
     public static String repDLCC;
     public static String gS;
+    public static int index=1;
     private void setButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setButtonActionPerformed
         gS = sentenceTextField.getText();
         toLC = gS.toLowerCase();
@@ -137,7 +138,7 @@ public class ConvertForm extends javax.swing.JFrame {
         if(charIsVowel(first.charAt(0))){
             convertedLabel.setText("Convert: "+a[0]+"way");
         }
-        int index=0;
+        
         for(;index<first.length();index++){
             if(charIsVowel(first.charAt(index))){
                 break;
@@ -145,75 +146,55 @@ public class ConvertForm extends javax.swing.JFrame {
         }
         String translation = first.substring(index) + first.substring(0, index);
         convertedLabel.setText("Convert: "+translation+"ay");
+        nextButton.setEnabled(true);
+        prevButton.setEnabled(true);
     }//GEN-LAST:event_setButtonActionPerformed
 
     private void prevButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevButtonActionPerformed
-        String a[] = repDLCC.split(" ");
-        int n=1;
-        if(n<=count_Words(repDLCC.trim())){
-            xofyLabel.setText(n+" of "+count_Words(repDLCC.trim()));
-        wordLabel.setText("Word: "+a[n+1]);
-        if(charIsVowel(a[n+1].charAt(0))){
-            convertedLabel.setText("Convert: "+a[n+1]+"way");
+        String a[] = repDLCC.trim().split(" ");
+        
+        if(index==1){
+            index = a.length;
+        }else if(index<=a.length){
+            index--;
         }
-        int index=0;
-        for(;index<a[n+1].length();index++){
-            if(charIsVowel(a[n+1].charAt(index))){
-                break;
-            }
-        }
-        String translation = a[n+1].substring(index) + a[n+1].substring(0, index);
-        convertedLabel.setText("Convert: "+translation+"ay");
-        }else if(n==count_Words(repDLCC.trim())){
-            xofyLabel.setText(a[0]+" of "+count_Words(repDLCC.trim()));
-        wordLabel.setText("Word: "+a[0]);
-        if(charIsVowel(a[0].charAt(0))){
+        String first = a[index];
+        if(charIsVowel(first.charAt(0))){
             convertedLabel.setText("Convert: "+a[0]+"way");
         }
-        int index=0;
-        for(;index<a[0].length();index++){
-            if(charIsVowel(a[0].charAt(index))){
+        
+        for(;index<first.length();index++){
+            if(charIsVowel(first.charAt(index))){
                 break;
             }
         }
-        String translation = a[0].substring(index) + a[0].substring(0, index);
+        String translation = first.substring(index) + first.substring(0, index);
         convertedLabel.setText("Convert: "+translation+"ay");
-        }
+        wordLabel.setText("Word: "+first);
+        xofyLabel.setText(index+" of "+count_Words(repDLCC.trim()));
     }//GEN-LAST:event_prevButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        String a[] = repDLCC.split(" ");
-        int n=1;
-        int eql = count_Words(repDLCC.trim());
-        if(n>=count_Words(repDLCC.trim())){
-            xofyLabel.setText(n+" of "+count_Words(repDLCC.trim()));
-        wordLabel.setText("Word: "+a[n+1]);
-        if(charIsVowel(a[n-1].charAt(0))){
-            convertedLabel.setText("Convert: "+a[n-1]+"way");
+        String a[] = repDLCC.trim().split(" ");
+        if(index<a.length){
+            index++;
+        }else if(index>=a.length){
+            index =1;
         }
-        int index=0;
-        for(;index<a[n-1].length();index++){
-            if(charIsVowel(a[n-1].charAt(index))){
+        String first = a[index];
+        if(charIsVowel(first.charAt(0))){
+            convertedLabel.setText("Convert: "+a[0]+"way");
+        }
+        
+        for(;index<first.length();index++){
+            if(charIsVowel(first.charAt(index))){
                 break;
             }
         }
-        String translation = a[n-1].substring(index) + a[n-1].substring(0, index);
+        String translation = first.substring(index) + first.substring(0, index);
         convertedLabel.setText("Convert: "+translation+"ay");
-        }else if(n==0){
-           xofyLabel.setText(eql+" of "+count_Words(repDLCC.trim()));
-        wordLabel.setText("Word: "+a[n]);
-        if(charIsVowel(a[eql].charAt(0))){
-            convertedLabel.setText("Convert: "+a[eql]+"way");
-        }
-        int index=0;
-        for(;index<a[eql].length();index++){
-            if(charIsVowel(a[eql].charAt(index))){
-                break;
-            }
-        }
-        String translation = a[eql].substring(index) + a[eql].substring(0, index);
-        convertedLabel.setText("Convert: "+translation+"ay"); 
-        }
+        wordLabel.setText("Word: "+first);
+        xofyLabel.setText(index+" of "+count_Words(repDLCC.trim()));
     }//GEN-LAST:event_nextButtonActionPerformed
     /**
      * @param args the command line arguments
