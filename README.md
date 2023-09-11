@@ -1,4 +1,4 @@
 # Java
 School work
 
-Java School Works Repository
+Java School Work Repository
